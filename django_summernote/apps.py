@@ -8,6 +8,7 @@ from django_summernote.utils import (
 class DjangoSummernoteConfig(AppConfig):
     name = 'django_summernote'
     verbose_name = 'Django Summernote'
+    default_auto_field = 'django.db.models.AutoField'
 
     theme = 'bs3'
     config = {}
