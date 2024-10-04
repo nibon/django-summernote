@@ -149,8 +149,7 @@ class SummernoteUploadAttachment(UserPassesTestMixin, View):
                 if self.config['attachment_absolute_uri']:
                     attachment.url = request.build_absolute_uri(attachment.url)
                 elif self.config["attachment_cloudinary"] and attachment.url.startswith("/res.cloudinary.com"):
-                    url, url_random = attachment.url.rsplit("_", 1)
-                    attachment.url = f"https:/{url}.{url_random.split('.')[1]}"
+                    attachment.url = f"https:/{attachment.url}"
 
                 attachments.append(attachment)
 
